@@ -7,14 +7,14 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const searchForm = document.querySelector('#search-form');
 const gallery = document.querySelector('.gallery');
-const btnLoadMo = document.querySelector('.btn-load-more');
+const loadMoreBtn = document.querySelector('.btn-load-more');
 let query = '';
 let page = 1;
 let simpleLightBox;
 const perPage = 40;
 
 searchForm.addEventListener('submit', onSearchForm);
-btnLoadMo.addEventListener('click', onBtnLoadMo);
+loadMoreBtn.addEventListener('click', onloadMoreBtn);
 
 onScroll();
 onToTopBtn();
@@ -25,7 +25,7 @@ function onSearchForm(e) {
   page = 1;
   query = e.currentTarget.searchQuery.value.trim();
   gallery.innerHTML = '';
-  btnLoadMo.classList.add('is-hidden');
+  loadMoreBtn.classList.add('is-hidden');
 
   if (query === '') {
     alertNoEmptySearch();
@@ -42,7 +42,7 @@ function onSearchForm(e) {
         alertImagesFound(data);
 
         if (data.totalHits > perPage) {
-          btnLoadMo.classList.remove('is-hidden');
+          loadMoreBtn.classList.remove('is-hidden');
         }
       }
     })
@@ -52,7 +52,7 @@ function onSearchForm(e) {
     });
 }
 
-function onBtnLoadMo() {
+function onloadMoreBtn() {
   page += 1;
   simpleLightBox.destroy();
 
@@ -64,7 +64,7 @@ function onBtnLoadMo() {
       const totalPages = Math.ceil(data.totalHits / perPage);
 
       if (page > totalPages) {
-        btnLoadMo.classList.add('is-hidden');
+        loadMoreBtn.classList.add('is-hidden');
         alertEndOfSearch();
       }
     })
