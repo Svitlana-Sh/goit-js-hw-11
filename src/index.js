@@ -52,7 +52,7 @@ function onSearchForm(e) {
     });
 }
 
-function onbtnLoadMo() {
+function onBtnLoadMo() {
   page += 1;
   simpleLightBox.destroy();
 
