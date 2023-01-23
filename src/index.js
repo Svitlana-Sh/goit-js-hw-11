@@ -31,11 +31,11 @@ async function onSearchForm(e) {
     alertNoEmptySearch();
     return;
   }
-
-  let response = await fetchImages(query, page, perPage);
-  let data = hadlingResponse(response);
   
   try {
+    let response = await fetchImages(query, page, perPage);
+    let data = hadlingResponse(response);
+
     if (data.totalHits === 0) {
       alertNoImagesFound();
     } else {
@@ -58,9 +58,10 @@ async function onloadMoreBtn() {
   page += 1;
   simpleLightBox.destroy();
 
-  let response = await fetchImages(query, page, perPage);
-  let data = hadlingResponse(response);
   try {
+    let response = await fetchImages(query, page, perPage);
+    let data = hadlingResponse(response);
+    
     renderGallery(data.hits);
     simpleLightBox = new SimpleLightbox('.gallery a').refresh();
 
