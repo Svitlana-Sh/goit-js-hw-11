@@ -25,7 +25,7 @@ p {
   padding-top: 10px;
   padding-bottom: 10px;
   position: fixed;
-  background-color: #2d2d2e;
+  background-color: #457584;
   box-shadow: 0 1px 3px rgba(235, 235, 235, 0.12), 0 1px 1px rgba(207, 207, 207, 0.14),
     0 2px 1px rgba(241, 241, 241, 0.2);
   z-index: 1;
@@ -53,7 +53,7 @@ p {
   align-items: center;
   width: 100px;
   border: none;
-  background-color: #5bbfa3;
+  background-color: #80cdc8;
 
   border-radius: 0 4px 4px 0;
   cursor: pointer;
@@ -61,7 +61,7 @@ p {
 
 .search-form button:hover,
 .search-form button:focus {
-  background-color: rgb(11, 240, 172);
+  background-color: rgb(75, 175, 167);
   transition: all 0.3s;
 }
 
